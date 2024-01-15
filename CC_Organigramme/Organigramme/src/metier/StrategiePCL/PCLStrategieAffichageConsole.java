@@ -9,6 +9,6 @@ public class PCLStrategieAffichageConsole implements PCLStrategie {
     public void propertyChange(PropertyChangeEvent evt) {
         Categorisable elementSansFils = (Categorisable) evt.getOldValue();
 
-        System.out.println("le " + elementSansFils + " n'a plus aucun membre");
+        System.out.println("#####   le" + elementSansFils + " n'a plus aucun membre");
     }
 }

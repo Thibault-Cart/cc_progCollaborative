@@ -9,9 +9,6 @@ public class Personnel {
     private String nom;
     private String prenom;
 
-    public int getNo() {
-        return no;
-    }
 
     public Personnel(int no, String nom, String prenom) {
         this.no = no;
@@ -37,5 +34,7 @@ public class Personnel {
     }
 
     @Override
-    public String toString() { return prenom + " " + nom; }
+    public String toString() {
+        return prenom + " " + nom;
+    }
 }

@@ -7,7 +7,6 @@ import metier.StrategiePCL.PCLStrategieAffichageConsole;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class Organigramme {
     private Noeud racine;
@@ -46,7 +45,13 @@ public class Organigramme {
     }
 
     public String getNoeud(int key) {
-        return racine.chercher(new Noeud(key)).toString();
+       
+        Noeud n = racine.chercher(new Noeud(key));
+        if (n != null) {
+            return n.toString();
+        } else {
+            return null;
+        }
     }
 
     public static int compteurCategorie = 0;
@@ -68,28 +73,19 @@ public class Organigramme {
 
     private static ArrayList affichageChemin;
 
-    public void afficherPositionHierarchique(int key) {
+    public ArrayList afficherPositionHierarchique(int key) {
         affichageChemin = new ArrayList<>();
         Noeud n = racine.chercher(new Noeud(key));
         if (n != null) {
 
             n.afficherPositionHierarchique();
 
-            int tabulation = 0;
-            String charTab = "\t\t ";
-
-            // inverse affichageChemin
-            Collections.reverse(affichageChemin);
-
-
-            for (int i = 0; i < affichageChemin.size(); i++) {
-                System.out.println(charTab.repeat(tabulation) + "==>" + affichageChemin.get(i));
-                tabulation++;
-            }
+            return affichageChemin;
 
         } else {
             System.out.println("Noeud introuvable");
         }
+        return null;
     }
 
 
