@@ -25,10 +25,7 @@ public class Organigramme {
         strategieListener = pclStrategie;
     }
 
-    public Noeud getRacine() {
-        return racine;
-    }
-
+ 
     public void setRacine(Categorisable racine) {
         this.racine = new Noeud(racine, null);
     }
@@ -45,7 +42,7 @@ public class Organigramme {
     }
 
     public String getNoeud(int key) {
-       
+
         Noeud n = racine.chercher(new Noeud(key));
         if (n != null) {
             return n.toString();
@@ -157,15 +154,18 @@ public class Organigramme {
         }
 
         public void supprimer() {
+            //pour chaque fils du noeud a supprimer, on le deplace vers le noeud pere
             for (Noeud f : fils) {
                 System.out.println("-->Deplacement de  " + f.contenu);
                 f.pere = this.pere;
                 f.pere.fils.remove(this);
                 f.pere.fils.add(f);
             }
+            //supprimer le noeud de la liste des fils du noeud pere
             if (this.pere != null) {
                 this.pere.fils.remove(this);
             }
+            //si le noeud pere ne possede plus de fils, on declenche l'evenement NoeudSansFils
             if (this.pere.fils.size() == 0) {
                 pcs.firePropertyChange("NoeudSansFils", this.pere.contenu, this.pere.pere);
             }

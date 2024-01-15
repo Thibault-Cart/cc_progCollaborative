@@ -27,10 +27,11 @@ public class GestionOrganigramme {
         System.out.println("Il y en a " + nombreDeCetteCategorie("CC") + " Noeuds de la catégorie <CC>");
         System.out.println("Il y en a " + nombreDeCetteCategorie("AA") + " Noeuds de la catégorie <AA>");
         afficherPositionHierarchique(123);
+        afficherPositionHierarchique(104);
         supprimerUnNoeud(126);
         supprimerUnNoeud(12);
         supprimerUnNoeud(112);
-        afficherPositionHierarchique(122);
+        afficherPositionHierarchique(104);
     }
 
     private void remplirOrganigramme() {
