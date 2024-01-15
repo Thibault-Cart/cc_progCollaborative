@@ -23,7 +23,7 @@ public class GestionOrganigramme {
     public GestionOrganigramme() {      // test des traitements : vous pouvez en ôter/modifier/rajouter
         remplirOrganigramme();
         System.out.println("Il y en a " + nombreDeCetteCategorie("CC") + " de la catégorie <CC>");
-        afficherPositionHierarchique("E123");
+        afficherPositionHierarchique(123);
         supprimerUnNoeud(126);
         supprimerUnNoeud(12);
         supprimerUnNoeud(112);
@@ -48,10 +48,10 @@ public class GestionOrganigramme {
         return organigramme.nombreDeCetteCategorie(categorie);
     }
 
-    private void afficherPositionHierarchique(String key) {
-        // TODO: cette méthode doit afficher tous les supérieurs de 'key'
-        String[] x = Bdd.read(key);
-        System.out.println("Position hiérarchique de " + Arrays.toString(x) + " :");
+    private void afficherPositionHierarchique(int key) {
+
+        System.out.println("\nPosition hiérarchique du Noeud " + organigramme.getNoeud(key));
+        organigramme.afficherPositionHierarchique(key);
     }
 
     private void supprimerUnNoeud(int key) {
