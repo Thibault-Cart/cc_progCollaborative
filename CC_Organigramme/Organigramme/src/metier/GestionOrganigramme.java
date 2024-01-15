@@ -30,7 +30,7 @@ public class GestionOrganigramme {
         supprimerUnNoeud(126);
         supprimerUnNoeud(12);
         supprimerUnNoeud(112);
-        afficherPositionHierarchique(104);
+        afficherPositionHierarchique(122);
     }
 
     private void remplirOrganigramme() {
