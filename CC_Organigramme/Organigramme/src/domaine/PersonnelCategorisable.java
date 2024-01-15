@@ -23,4 +23,9 @@ public class PersonnelCategorisable implements Categorisable {
     public int getNo() {
         return personnel.getNo();
     }
+
+    @Override
+    public String toString() {
+        return personnel.toString();
+    }
 }

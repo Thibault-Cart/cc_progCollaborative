@@ -9,10 +9,14 @@ public class NoeudDiagram implements Categorisable {
         this.elem = elem;
     }
 
+    @Override
+    public String toString() {
+        return elem.toString();
+    }
 
     @Override
     public String getCategorie() {
-        return null;
+        return categorie;
     }
 
     @Override

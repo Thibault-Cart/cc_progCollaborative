@@ -38,7 +38,7 @@ public class Dept implements Categorisable {
 
     @Override
     public String toString() {
-        return "(" + code + ") " + nom + " <" + categorie + ">";
+        return "Departement "+no+" (" + code + ") " + nom + " <" + categorie + ">";
     }
 
     @Override

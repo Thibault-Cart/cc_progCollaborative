@@ -28,7 +28,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Main.executor": "Debug",
+    "Application.Main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "last_opened_file_path": "C:/Users/thiba/OneDrive - HESSO/CC_progCollaborative/cc_progCollaborative/CC_Organigramme/Organigramme"
@@ -63,7 +63,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1705302869509</updated>
-      <workItem from="1705302870498" duration="2592000" />
+      <workItem from="1705302870498" duration="5603000" />
     </task>
     <servers />
   </component>
@@ -74,14 +74,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/domaine/factory/FactoryEmployeDept.java</url>
-          <line>14</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/metier/GestionOrganigramme.java</url>
-          <line>39</line>
-          <option name="timeStamp" value="8" />
+          <url>file://$PROJECT_DIR$/src/metier/Organigramme.java</url>
+          <line>132</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

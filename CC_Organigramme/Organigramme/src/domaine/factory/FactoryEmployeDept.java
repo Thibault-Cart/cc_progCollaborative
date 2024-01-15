@@ -9,6 +9,7 @@ public class FactoryEmployeDept implements FactoryOrganigram {
         Categorisable result = null;
 
         String type = champs[0];
+
         switch (type) {
             case "CADR":
                 Cadre cadre = new Cadre(Integer.parseInt(champs[1]), champs[2], champs[3], champs[4]);
@@ -23,10 +24,10 @@ public class FactoryEmployeDept implements FactoryOrganigram {
 
 
                 break;
-            case "EMP":
+            case "EMPL":
                 Employe employe = new Employe(Integer.parseInt(champs[1]), champs[2], champs[3], champs[4]);
                 PersonnelCategorisable personnelCategorisable2 = new PersonnelCategorisable(employe, champs[5]);
-                Categorisable categorisable3 = new NoeudDiagram(champs[6], personnelCategorisable2);
+                Categorisable categorisable3 = new NoeudDiagram(champs[5], personnelCategorisable2);
                 result = categorisable3;
                 break;
             default:

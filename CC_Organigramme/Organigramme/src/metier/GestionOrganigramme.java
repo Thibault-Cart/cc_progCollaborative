@@ -10,7 +10,7 @@ import java.util.List;
 
 public class GestionOrganigramme {
 
-    private Organigramme organigramme=new Organigramme();  // TODO: Cette variable devra contenir TOUTES les données
+    private Organigramme organigramme = new Organigramme();  // TODO: Cette variable devra contenir TOUTES les données
 
     //par default on utilise la factory FactoryEmployeDept
     private static FactoryOrganigram factoryOrganigram = new FactoryEmployeDept();
@@ -24,9 +24,9 @@ public class GestionOrganigramme {
         remplirOrganigramme();
         System.out.println("Il y en a " + nombreDeCetteCategorie("CC") + " de la catégorie <CC>");
         afficherPositionHierarchique("E123");
-        supprimerUnNoeud("E126");
-        supprimerUnNoeud("D12");
-        supprimerUnNoeud("C112");
+        supprimerUnNoeud(126);
+        supprimerUnNoeud(12);
+        supprimerUnNoeud(112);
     }
 
     private void remplirOrganigramme() {
@@ -35,16 +35,17 @@ public class GestionOrganigramme {
         // Le code ci-dessous est là uniquement pour vous montrer le contenu ! Vous pouvez tout supprimer/remplacer !
         System.out.println("Sommet de l'organigramme : " + Arrays.toString(data.get(0)));
         Categorisable sommet = factoryOrganigram.createCategorisable(data.get(0));
+        organigramme.setRacine(sommet);
         for (int i = 1; i < data.size(); i += 2) {
-            Categorisable noeud = factoryOrganigram.createCategorisable(data.get(i ));
-            organigramme.ajouterNoeud(noeud);
-            System.out.println("Nouveau poste: " + Arrays.toString(data.get(i)) + " est le fils de " + Arrays.toString(data.get(i + 1)));
+            Categorisable fils = factoryOrganigram.createCategorisable(data.get(i));
+            Categorisable pere = factoryOrganigram.createCategorisable(data.get(i + 1));
+            organigramme.ajouterNoeud(fils, pere);
         }
     }
 
     private int nombreDeCetteCategorie(String categorie) {
         // TODO: cette méthode doit retourner le nombre de postes de la catégorie spécifiée
-        return -1;
+        return organigramme.nombreDeCetteCategorie(categorie);
     }
 
     private void afficherPositionHierarchique(String key) {
@@ -53,7 +54,9 @@ public class GestionOrganigramme {
         System.out.println("Position hiérarchique de " + Arrays.toString(x) + " :");
     }
 
-    private void supprimerUnNoeud(String key) {
+    private void supprimerUnNoeud(int key) {
         // TODO: cette méthode doit supprimer le poste 'key', et rattacher ses fils éventuels à son père
+        System.out.println("Suppression du Noeud " + organigramme.getNoeud(key));
+        organigramme.supprimerUnNoeud(key);
     }
 }
